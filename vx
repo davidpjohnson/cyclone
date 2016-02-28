@@ -1,0 +1,6 @@
+#!/bin/bash
+# this should only be used to create a skeleton Bash script
+argument=$1  # this is the file to be created
+argument2=$2
+vim $argument
+./$argument $argument2
