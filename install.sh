@@ -39,6 +39,7 @@ distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-")
 
 if [ $distro == "debian" ]; then 
     apt-get install -y vim
+    apt-get install guake
     install
 elif [ $distro == "ubuntu" ]; then
     apt-get install -y vim
