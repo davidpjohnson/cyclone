@@ -20,8 +20,8 @@ install ()
     cp vx /usr/bin/
     cp vpx /usr/bin/
     cp vsx /usr/bin/
-    cp vimrc ~/.vimrc
-    cp bashrc ~/.bashrc
+    cp vimrc /home/$user/.vimrc
+    cp bashrc /home/$user/.bashrc
     rsync root@159.203.2.193:/home/yojimbo/bkup/projects.tar.gz /tmp/
     rsync root@159.203.2.193:/home/yojimbo/bkup/scripts.tar.gz /tmp/
     cd /tmp
