@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script copies v, vp, vs, and vx to /usr/bin/
-
+user=$1
 
 install ()
 {
@@ -19,7 +19,7 @@ install ()
     tar xvf projects.tar.gz
     tar xvf scripts.tar.gz
     mv projects /projects
-    mv scripts ~/scripts 
+    mv scripts /home/$user/scripts 
 }
 
 distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
