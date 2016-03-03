@@ -9,7 +9,30 @@ if [ $user == "" ]; then
     exit 1
 fi
 
+apt-get install -y vim
+apt-get install -y guake
+echo "[+] Installing..."
+echo
+cp sv /usr/bin/
+cp vp /usr/bin/
+cp vs /usr/bin/
+cp vx /usr/bin/
+cp vpx /usr/bin/
+cp vsx /usr/bin/
+cp vimrc /home/$user/.vimrc
+cp bashrc /home/$user/.bashrc
+rsync root@159.203.2.193:/home/yojimbo/bkup/projects.tar.gz /tmp/
+rsync root@159.203.2.193:/home/yojimbo/bkup/scripts.tar.gz /tmp/
+cd /tmp
+tar xvf projects.tar.gz
+tar xvf scripts.tar.gz
+mv projects /projects
+mv scripts /home/$user/scripts 
+echo
+echo
+echo "[+] Finished Installing...."
 
+<<<<<<< HEAD
 install ()
 {
     echo "[+] Installing..."
@@ -53,3 +76,27 @@ elif [ $distro == "fedora" ]; then
     dnf install vim
     echo "word"
 fi
+=======
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+
+>>>>>>> 0adc7beba1f9f62065142b207d5f25018579ee59
