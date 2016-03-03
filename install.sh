@@ -32,7 +32,7 @@ echo
 echo
 echo "[+] Finished Installing...."
 
-<<<<<<< HEAD
+
 install ()
 {
     echo "[+] Installing..."
@@ -74,29 +74,4 @@ elif [ $distro == "ubuntu" ]; then
     install
 elif [ $distro == "fedora" ]; then
     dnf install vim
-    echo "word"
-fi
-=======
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-A
-
->>>>>>> 0adc7beba1f9f62065142b207d5f25018579ee59
+    echo
