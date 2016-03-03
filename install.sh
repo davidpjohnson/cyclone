@@ -14,6 +14,11 @@ install ()
 {
     echo "[+] Installing..."
     echo
+    apt-get install -y guake
+    apt-get install -y python-dev
+    apt-get install -y python-pip
+    pip install scapy
+    pip install paramiko
     cp sv /usr/bin/
     cp vp /usr/bin/
     cp vs /usr/bin/
