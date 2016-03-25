@@ -28,6 +28,8 @@ tar xvf projects.tar.gz
 tar xvf scripts.tar.gz
 mv projects /projects
 mv scripts /home/$user/scripts 
+cd /
+git clone http://github.com/trustedsec/ptf
 echo
 echo
 echo "[+] Finished Installing...."
@@ -37,6 +39,8 @@ install ()
 {
     echo "[+] Installing..."
     echo
+    apt-get install -y nmap
+
     apt-get install -y guake
     apt-get install -y python-dev
     apt-get install -y python-pip
