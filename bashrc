@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\T \[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[1;92m\]\w\[\033[00m\]\$ \n \[\033[0;36m\]'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\D{%D} \@ \[\033[01;34m\]\u@\h\[\033[00m\]\[\033[1;92m\] \w\[\033[00m\]\$\n \[\033[0;36m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -108,3 +108,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export GITLAB_PRIVATE_TOKEN="jiyWqSig-YTKrFjDPz6P"
+export SIGNING_PRIVATE_TOKEN="0c82e3b3-d18f-4579-a30c-0979198b0810"
