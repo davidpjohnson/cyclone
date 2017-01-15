@@ -109,5 +109,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export GITLAB_PRIVATE_TOKEN="jiyWqSig-YTKrFjDPz6P"
-export SIGNING_PRIVATE_TOKEN="0c82e3b3-d18f-4579-a30c-0979198b0810"
