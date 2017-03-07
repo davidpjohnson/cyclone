@@ -1,6 +1,5 @@
 #!/bin/bash
 
-distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
 os=$(uname)
 echo $os
 install ()
@@ -29,6 +28,7 @@ echo "Determining Platform..."
 if [ $os == "Linux" ]; then
     echo "Using Linux...."
     echo "Determining Distro...."
+    distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
     if [ $distro == "debian" ]; then 
         install
     elif [ $distro == "ubuntu" ]; then
