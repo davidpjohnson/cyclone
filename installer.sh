@@ -6,7 +6,7 @@ echo $os
 basic ()
 {
     echo "[+] Installing..."
-    echo
+    echo " "
     apt-get update
     apt-get install -y vim
     apt-get install -y guake
@@ -15,18 +15,22 @@ basic ()
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
     echo "[+] Finished Installing...."
-    echo 
+    echo " " 
 }
 
 advanced () {
     echo "[+] Installing advanced enviroment..."
-    echo
+    echo " "
     cd ~/
-    mkdir tools
-    cd tools
-    git clone https://github.com/trustedsec/ptf.git
-    git clone https://github.com/trustedsec/social-engineer-toolkit.git
-    git clone https://github.com/trustedsec/artillery.git   
+    if [ -d "tools" ]; then
+        exit
+    else
+        mkdir tools
+        cd tools
+        git clone https://github.com/trustedsec/ptf.git
+        git clone https://github.com/trustedsec/social-engineer-toolkit.git
+        git clone https://github.com/trustedsec/artillery.git  
+    fi 
 }
 
 echo "Determining Platform..."
@@ -35,7 +39,6 @@ echo "Determining Platform..."
 # The right was [ a == b ]
 if [ $os == "Linux" ]; then
     echo $distro
-    echo "Using Linux...."
     echo "Determining Distro...."
     distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
     if [ $distro == "debian" ]; then 
@@ -46,15 +49,11 @@ if [ $os == "Linux" ]; then
         echo "Sorry I only use apt-get."
         echo "dnf and yum is not supported"
     fi
-
 elif [ $os == "Darwin" ]; then
     echo $distro
-    echo "Using OS X...."
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
 
-    if [ $argv == "-a" ]; then
-        advanced
 
 else
     echo "[!] Fatal Error"
@@ -62,8 +61,14 @@ else
 fi
 
 if [ $argv == "-a" ]; then
-    apt-get -y upgrade
-    apt-get install -y wireshark
-    apt-get install -y nmap
-    advanced
+    if [ $os == "Linux" ]; then
+        apt-get -y upgrade
+        apt-get install -y nmap
+        apt-get install -y wireshark
+        advanced
+    elif [ $os == "Darwin" ]; then
+        advanced
+    fi
+else
+    echo "[!] Fatal Error"
 fi
