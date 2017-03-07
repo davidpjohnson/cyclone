@@ -23,6 +23,9 @@ install ()
 }
 echo "Determining Platform..."
 
+# Be sure to add the spaces in your if statements
+# For example [a == b] is bad
+# The right was [ a == b ]
 if [ $os == "Linux" ]; then
     echo "Using Linux...."
     echo "Determining Distro...."
