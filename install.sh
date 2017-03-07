@@ -1,6 +1,8 @@
 #!/bin/bash
 
 distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
+os=$(uname)
+echo $os
 install ()
 {
     echo $distro
@@ -21,7 +23,7 @@ install ()
 }
 echo "Determining Platform..."
 
-if [uname == "Linux"]; then
+if [ $os == "Linux" ]; then
     echo "Using Linux...."
     echo "Determining Distro...."
     if [ $distro == "debian" ]; then 
@@ -33,7 +35,7 @@ if [uname == "Linux"]; then
         echo "dnf and yum is not supported"
     fi
 
-elif [uname == "Darwin"]; then
+elif [ $os == "Darwin" ]; then
     echo "Using OS X...."
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
