@@ -1,5 +1,11 @@
-# Cyclone
+# Cy-clone
+##### Cyber Clone
 
-To use: sudo ./install <username>
+Cy-clone clones my prefered vimrc and bashrc files. It also installs 
+my prefered tools such as Guake. For a complet list of what id does 
+just look an install.sh.
+
+###### How to use:
+To use: sudo ./install
 
 
