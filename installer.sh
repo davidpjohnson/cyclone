@@ -5,7 +5,6 @@ echo $os
 
 basic ()
 {
-    echo $distro
     echo "[+] Installing..."
     echo
     apt-get update
@@ -22,11 +21,6 @@ basic ()
 advanced () {
     echo "[+] Installing advanced enviroment..."
     echo
-    apt-get -y upgrade
-    # pip install paramiko
-    # pip install scapy
-    apt-get install -y nmap
-    apt-get install -y wireshark
     cd ~/
     mkdir tools
     cd tools
@@ -40,6 +34,7 @@ echo "Determining Platform..."
 # For example [a == b] is bad
 # The right was [ a == b ]
 if [ $os == "Linux" ]; then
+    echo $distro
     echo "Using Linux...."
     echo "Determining Distro...."
     distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
@@ -53,15 +48,22 @@ if [ $os == "Linux" ]; then
     fi
 
 elif [ $os == "Darwin" ]; then
+    echo $distro
     echo "Using OS X...."
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
+
+    if [ $argv == "-a" ]; then
+        advanced
 
 else
     echo "[!] Fatal Error"
 
 fi
 
-if [ $argv == "advanced" ]; then
+if [ $argv == "-a" ]; then
+    apt-get -y upgrade
+    apt-get install -y wireshark
+    apt-get install -y nmap
     advanced
 fi
