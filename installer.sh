@@ -67,6 +67,7 @@ if [ $argv == "-a" ]; then
         apt-get install -y wireshark
         advanced
     elif [ $os == "Darwin" ]; then
+        brew install nmap
         advanced
     fi
 else
