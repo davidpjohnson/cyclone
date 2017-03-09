@@ -23,13 +23,16 @@ advanced () {
     echo " "
     cd ~/
     if [ -d "tools" ]; then
+        echo "[+] tools directorl aleady exists..."
+        echo "Aborting..."
         exit
     else
         mkdir tools
         cd tools
         git clone https://github.com/trustedsec/ptf.git
-        git clone https://github.com/trustedsec/social-engineer-toolkit.git
-        git clone https://github.com/trustedsec/artillery.git  
+        echo "[+] Installed ptf..."
+        git clone https://github.com/BinaryDefense/artillery.git
+        echo "[+] Installed artillery..."
     fi 
 }
 
