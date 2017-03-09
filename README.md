@@ -12,3 +12,4 @@ sudo ./installer.sh
 ###### Advanced
 sudo ./installer.sh -a
 
+Advanced will clone ptf and other security tools.
