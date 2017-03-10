@@ -15,7 +15,6 @@ basic ()
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
     echo "[+] Finished Installing..."
-    echo " " 
 }
 
 advanced () {
@@ -55,7 +54,7 @@ if [ $os == "Linux" ]; then
 elif [ $os == "Darwin" ]; then
     echo $distro
     cp vimrc ~/.vimrc
-    cp bashrc ~/.bashrc
+    cp bash_profile ~/.bash_profile
 
 
 else
@@ -64,7 +63,10 @@ else
 
 fi
 
-if [ $argv == "-a" ]; then
+# Was getting an "unary operator expected"
+# when argv was empty. Adding "" around 
+# $argv in the if statement fixed it
+if [ "$argv" == "-a" ]; then
     if [ $os == "Linux" ]; then
         apt-get -y upgrade
         apt-get install -y nmap
@@ -74,6 +76,4 @@ if [ $argv == "-a" ]; then
         brew install nmap
         advanced
     fi
-else
-    echo 
 fi
