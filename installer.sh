@@ -14,7 +14,7 @@ basic ()
     aot-get install -y python-pip3
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
-    echo "[+] Finished Installing...."
+    echo "[+] Finished Installing..."
     echo " " 
 }
 
@@ -42,7 +42,7 @@ echo "Determining Platform..."
 # The right was [ a == b ]
 if [ $os == "Linux" ]; then
     echo $distro
-    echo "Determining Distro...."
+    echo "Determining Distro..."
     distro=$(cut -f2 -d"(" /proc/version | cut -f1 -d"-") 
     if [ $distro == "debian" ]; then 
         basic
@@ -59,7 +59,8 @@ elif [ $os == "Darwin" ]; then
 
 
 else
-    echo "[!] Fatal Error"
+    echo "[!] Fatal Error..."
+    echo "[+] Aborting..."
 
 fi
 
@@ -74,5 +75,5 @@ if [ $argv == "-a" ]; then
         advanced
     fi
 else
-    echo "[!] Fatal Error"
+    echo 
 fi
