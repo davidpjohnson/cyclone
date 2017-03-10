@@ -10,4 +10,13 @@ def determin_os():
     """Determin which Operation System is being used
     """
     os = system()
+    if (os == 'Darwin'):
+        installer-osx.sh
+    
+    if (os == 'Linux'):
+        installer-unix.sh
+
+    if (os =='Windows'):
+        installer-win.ps1
+
 
