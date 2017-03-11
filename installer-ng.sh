@@ -74,15 +74,12 @@ hacking ()
 {
     pip3 install scapy
     pip3 install paramiko
-    git clone https://github.com/offensive-security/exploit-database.git /opt/exploit-database
 }
 
 # Hacking-unix: Install unix hacking tools
 hacking-unix () 
 {
     # Make a home for tools
-    cd
-    mkdir tools
     apt-get install -y nmap
     apt-get install -y bluez
     apt-get install -y kismet
@@ -92,19 +89,21 @@ hacking-unix ()
     apt-get install -y python-dbus
     apt-get install -y aircrack-ng
     apt-get install -y python-bluez
-    ./burpsuite_free_linux_v1_7_19.sh
     apt-get install -y libsqlite3-dev
     apt-get install -y ruby-dev bundler
+    ./scr/urpsuite_free_linux_v1_7_19.sh
     apt-get install -y bluez-teste-scripts
-    cd ~/tools/
+    cd && mkdir tools && cd ~/tools/
     git clone https://github.com/trustedsec/ptf.git
     git clone https://github.com/BinaryDefense/artillery.git
     git clone https://github.com/vanhauser-thc/thc-hydra.git
     git clone https://github.com/pwnieexpress/blue_hydra.git
     git clone https://github.com/trustedsec/social-engineer-toolkit.git
-    curl http://www.openwall.com/john/j/john-1.8.0.tar.xz -o john.tar.gz
+    curl http://www.openwall.com/john/j/john-1.8.0.tar.xz -o john-1.8.0.tar.gz
+    git clone https://github.com/offensive-security/exploit-database.git /opt/exploit-database
     curl http://www.willhackforsushi.com/code/cowpatty/4.6/cowpatty-4.6.tgz -o ~/tools/cowpatty.tgz
     curl https://portswigger.net/Burp/Releases/Download?productId=100&version=1.7.19&type=Linux -o ~/tools/burp
+    ln -sf /opt/exploit-database/searchsploit /usr/local/bin/searchsploit
 }
 
 # Fun-unix: Install fun tools like SDR
