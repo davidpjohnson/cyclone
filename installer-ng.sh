@@ -6,36 +6,122 @@
 # install hacking tools. Play will install tools such as RTL-SDR this
 # is where you will find randon tools.
 
+# This script is cross platform and is split up to accomidate Unix and
+# OS X. For example basic works on all platforms. Basic-unix is just
+# for Unix and basic-osx is just for OS X.
 
-# Argument Variables $1, $2 exec
-# Array ${!arr[*]}
+# Concerning Unix
+# I do not use Fedora or any distro that uses yum or DNF. There for I
+# do not support those package managers. If you use vim you can 
+# replace all instances of apt-get with yum or DNF with the following
+# :%s/apt-get/dnf/g
+# This hack should work but is untested
 
 arg=$1      # Get Argument variable
 os=$(uname) # Get OS
 
-# Basic: install basic tools and environments
-basic () 
-{
+# Basic: Install basic tools and environments
+basic () {
+    # Set up environment
     echo "[+] Installing Basic..."
+    cd Profiles
+    cp vimrc ~/.vimrc
+    cp bashrc ~/.bashrc
+}
+
+# Basic-Unix: Debian based only. 
+basic-unix () 
+{
     # Install tools
     apt-get -y update
     apt-get install -y vim
     apt-get install -y guake
     apt-get install -y python3
     apt-get install -y python3-pip 
-    # Set up environment
-    cd Profiles
-    cp vimrc ~/.vimrc
-    cp bashrc ~/.bashrc
-}
+}    
 
-# Development: install dev tools and environments
-
+# Development: Install dev tools and environments
 development () 
 {
+    # Set up git environment
     echo "[+] Installing Development..."
+    cp gitconfig ~/.gitconfig # Will need to add username and email
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+    # Install pathogen.vim
+    mkdir -p ~/.vim/autoload ~/.vim/bundle 
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    # Install vim plugins
+    cd ~/.vim/bundle
+    git clone git://github.com/tpope/vim-fugitive.git
+    git clone git://github.com/airblade/vim-gitgutter.git
+    git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+    git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+
+}
+
+# Development-Unix: Install Unix tools
+development-unix () 
+{
     # Install tools
     apt-get install -y git
+    apt-get install -y virtualbox
     apt-get install -y python3-dev
-    # Set up environment
-    cp gitconfig ~/.gitconfig # Will need to add username and email
+    apt-get install -y python2-dev
+    apt-get install -y python2-pip
+}
+
+# Hacking: Install hacking tools
+hacking () 
+{
+    cd 
+    mkdir tools
+    cd tools
+    pip3 install scapy
+    pip3 install paramiko
+    git clone https://github.com/trustedsec/ptf.git
+    git clone https://github.com/BinaryDefense/artillery.git
+    git clone https://github.com/pwnieexpress/blue_hydra.git
+    git clone https://github.com/vanhauser-thc/thc-hydra.git
+    git clone https://github.com/trustedsec/social-engineer-toolkit.git
+    curl http://www.openwall.com/john/j/john-1.8.0.tar.xz -o john.tar.gz
+    git clone https://github.com/offensive-security/exploit-database.git /opt/exploit-database
+}
+
+# Hacking-unix: Install unix hacking tools
+hacking-unix () 
+{
+    echo "[+] Installing hacking..."
+    # Make a home for tools
+    apt-get install -y nmap
+    apt-get install -y bluez
+    apt-get install -y kismet
+    apt-get install -y sqlite3
+    apt-get install -y ubertooth 
+    apt-get install -y wireshark
+    apt-get install -y python-dbus
+    apt-get install -y aircrack-ng
+    apt-get install -y python-bluez
+    apt-get install -y libsqlite3-dev
+    apt-get install -y ruby-dev bundler
+    apt-get install -y bluez-teste-scripts
+    curl http://www.willhackforsushi.com/code/cowpatty/4.6/cowpatty-4.6.tgz -o ~/tools/cowpatty.tgz
+    curl https://portswigger.net/Burp/Releases/Download?productId=100&version=1.7.19&type=Linux -o ~/tools/burp
+}
+
+# Fun-unix: Install fun tools like SDR
+fun-unix () 
+{
+    echo "[+] Installing fun..."
+    cd ~/
+    mkdir SDR && cd SDR
+    echo "[+] Installing SDR this takes awhile"
+    wget http://www.sbrac.org/files/build-gnuradio
+    chmod a+x ./build-gnuradio && ./build-gnuradio
+    add-apt-repository -y ppa:bladerf/bladerf
+    add-apt-repository -y ppa:ettusresearch/uhd
+    add-apt-repository -y ppa:myriadrf/drivers
+    add-apt-repository -y ppa:myriadrf/gnuradio
+    add-apt-repository -y ppa:gqrx/gqrx-sdr
+    apt-get update
+    apt-get install gqrx-sdr
+}
