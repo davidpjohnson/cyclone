@@ -1,6 +1,15 @@
 There are several things I would like to do with this new version.
 
-1) I would like to get my custom windows powershell set up
-2) For All: 
-    a) Get git alias and global 
-3) make a list for basic, advanced, and posably a middle level?
+1) Add windows powershell 
+    a. Add a powershell script to set up my windows dev environment.
+       Will need to include:
+            1. powershell config
+            2. bds tools refer to mac/Downloads/Agent_Essential
+            3. research other cool tools and tricks for windows
+
+2) Configure tools
+    a. Base work is done now configure all the tools. Those installed
+       with apt-get are done. All that are installed with git and curl
+       need to be installed and configured.
+            1. Git
+            2. Curl
