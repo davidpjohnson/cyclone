@@ -1,5 +1,7 @@
 [alias]
 	all = add *
+    st  = status
+    br  = branch
 [user]
 	email = kinsei.musashi@gmail.com
 	name = davidpjohnson
