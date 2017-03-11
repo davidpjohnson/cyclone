@@ -5,8 +5,7 @@ echo $os
 
 basic ()
 {
-    echo "[+] Installing..."
-    echo " "
+    echo "[+] Installing basic..."
     apt-get update
     apt-get install -y vim
     apt-get install -y guake
@@ -19,7 +18,6 @@ basic ()
 
 advanced () {
     echo "[+] Installing advanced enviroment..."
-    echo " "
     cd ~/
     if [ -d "tools" ]; then
         echo "[+] tools directorl aleady exists..."

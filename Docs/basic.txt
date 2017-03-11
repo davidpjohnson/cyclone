@@ -1,0 +1,25 @@
+python2
+python3
+pip
+pip3
+rtl-sdr wget http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && ./build-gnuradio
+hydra
+paramiko
+scapy
+ptf
+set
+nmap
+wireshark
+burp
+gqrx-sdr http://gqrx.dk/download/install-ubuntu
+virtualbox
+aircrack-ng
+kismet
+john the ripper
+python-dev
+python3-dev
+git
+vim
+guake
+exploitdb
+cowpatty

@@ -1,0 +1,5 @@
+[alias]
+	all = add *
+[user]
+	email = kinsei.musashi@gmail.com
+	name = davidpjohnson

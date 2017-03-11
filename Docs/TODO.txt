@@ -1,7 +1,6 @@
 There are several things I would like to do with this new version.
 
 1) I would like to get my custom windows powershell set up
-2) seporate OS X and Linux
-3) For All: 
+2) For All: 
     a) Get git alias and global 
-   
+3) make a list for basic, advanced, and posably a middle level?
