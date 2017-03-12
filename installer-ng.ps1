@@ -13,7 +13,7 @@ if ( !(Test-Path $profile)){
 }
 else{
     Write-Host "[+] Users PowerShell profile exists..."
-    cp Profiles\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserNmae\Documents\WindowsPowerShell\
+    cp Profiles\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\Documents\WindowsPowerShell\
     Write-Host "[+] Replacec old Microsoft.PowerShell_profile with shiny new one..."
 }
                                           
