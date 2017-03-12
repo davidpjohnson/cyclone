@@ -1,0 +1,26 @@
+D python2
+D python3
+D pip
+D pip3
+DU rtl-sdr wget http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && ./build-gnuradio
+D hydra https://github.com/vanhauser-thc/thc-hydra.git # cd to dir ./configure && make && make install
+D blue hydra https://github.com/pwnieexpress/blue_hydra.git
+DU paramiko
+DU scapy
+D ptf
+D set
+DU nmap
+DU wireshark
+DU burp
+DU gqrx-sdr http://gqrx.dk/download/install-ubuntu
+DU virtualbox
+DU aircrack-ng
+DU kismet
+DU john the ripper
+D python-dev
+D python3-dev
+D git
+D vim
+D guake
+DU exploitdb
+DU cowpatty
