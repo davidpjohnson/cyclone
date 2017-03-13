@@ -51,8 +51,8 @@ development ()
     # Install pathogen.vim
     # Install vim plugins
     cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-fugitive.git
-    git clone git://github.com/airblade/vim-gitgutter.git
+    git clone https://github.com/tpope/vim-fugitive.git
+    git clone https://github.com/airblade/vim-gitgutter.git
     git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
     git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 
