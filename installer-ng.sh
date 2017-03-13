@@ -27,6 +27,10 @@ basic ()
     cd Profiles
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
+    cp gitconfig ~/.gitconfig # Will need to add username and email
+    mkdir -p ~/.vim/autoload ~/.vim/bundle 
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 }
 
 # Basic-Unix: Debian based only. 
@@ -44,11 +48,7 @@ basic-unix ()
 development () 
 {
     # Set up git environment
-    cp gitconfig ~/.gitconfig # Will need to add username and email
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
     # Install pathogen.vim
-    mkdir -p ~/.vim/autoload ~/.vim/bundle 
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     # Install vim plugins
     cd ~/.vim/bundle
     git clone git://github.com/tpope/vim-fugitive.git
@@ -65,7 +65,7 @@ development-unix ()
     apt-get install -y git
     apt-get install -y virtualbox
     apt-get install -y python3-dev
-    apt-get install -y python2-dev
+    apt-get install -y python-dev
     apt-get install -y python2-pip
 }
 
