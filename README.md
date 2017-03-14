@@ -20,7 +20,9 @@ making.
 
 #### How to Install:
 
-git clone https://github.com/davidpjohnson/cyclone.git
+Clone the reop.
+
+`git clone https://github.com/davidpjohnson/cyclone.git`
 
 #### How to use:
 
