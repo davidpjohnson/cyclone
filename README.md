@@ -41,3 +41,19 @@ For everything and some fun tools like SDR(Software defined radio) use:
 
 `sudo installer-ng.sh -a`
 
+###### Windows
+
+To install on windows you must first download and install Git. With that done
+git clone this repo. Before trying to run the installer make sure you have 
+permisions set to do so. If you don't or don't know what I'm talking about
+open up powershell as Administrator and run the following.
+
+`Set-ExecutionPolicy Unrestricted`
+
+There are other options than unrestricted and this can open up a security hole.
+However, if you follow security best practices you will be fine. With permission
+to execute scripts now set run the following.
+
+`./installer-ng.ps1`
+
+
