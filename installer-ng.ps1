@@ -9,7 +9,7 @@ else{
     Write-Host "[+] Copied profile" 
 }
 
-$os_type = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match ‘(x64)’
+$os_type = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match "(x64)"
 
 if ($os_type -eq "True") {
     Write-Host "[+] Installin 64bit tools..."
@@ -23,7 +23,7 @@ if ($os_type -eq "True") {
     Write-Host "[+] Finished installing 64bit tools..."
     }
 else {
-    $os_type = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match ‘(x86)’
+    $os_type = (Get-WmiObject -Class Win32_ComputerSystem).SystemType -match "(x86)"
 
     if ($os_type -eq "True") {
         Write-Host "[+] Installing 32bit tools..." 
@@ -68,3 +68,41 @@ Write-Host " "
 Start-Sleep -m 380
 Write-Host " "
 Start-Sleep -m 400
+
+Write-Host " @@@@@@   @@@@@@@@   @@@@@@@  @@@  @@@  @@@@@@@   @@@  @@@@@@@  @@@ @@@  "
+Start-Sleep -m 100
+Write-Host "@@@@@@@   @@@@@@@@  @@@@@@@@  @@@  @@@  @@@@@@@@  @@@  @@@@@@@  @@@ @@@  "
+Start-Sleep -m 100
+Write-Host "!@@       @@!       !@@       @@!  @@@  @@!  @@@  @@!    @@!    @@! !@@  "
+Start-Sleep -m 120
+Write-Host "!@!       !@!       !@!       !@!  @!@  !@!  @!@  !@!    !@!    !@! @!!  "
+Start-Sleep -m 120
+Write-Host "!!@@!!    @!!!:!    !@!       @!@  !@!  @!@!!@!   !!@    @!!     !@!@!   "
+Start-Sleep -m 140
+Write-Host " !!@!!!   !!!!!:    !!!       !@!  !!!  !!@!@!    !!!    !!!      @!!!   "
+Start-Sleep -m 140
+Write-Host "     !:!  !!:       :!!       !!:  !!!  !!: :!!   !!:    !!:      !!:    "
+Start-Sleep -m 200
+Write-Host "    !:!   :!:       :!:       :!:  !:!  :!:  !:!  :!:    :!:      :!:    "
+Start-Sleep -m 200
+Write-Host ":::: ::    :: ::::   ::: :::  ::::: ::  ::   :::   ::     ::       ::    "
+Start-Sleep -m 240
+Write-Host ":: : :    : :: ::    :: :: :   : :  :    :   : :  :       :        :     "
+Start-Sleep -m 240
+Write-Host " "
+Start-Sleep -m 280
+Write-Host " "
+Start-Sleep -m 800
+
+Write-Host "@@@  @@@  @@@  @@@  @@@       @@@   @@@@@@   "
+Write-Host "@@@@ @@@  @@@  @@@@ @@@       @@@  @@@@@@@@  "
+Write-Host "@@!@!@@@  @@!  @@!@!@@@       @@!  @@!  @@@  "
+Write-Host "!@!!@!@!  !@!  !@!!@!@!       !@!  !@!  @!@  "
+Write-Host "@!@ !!@!  !!@  @!@ !!@!       !!@  @!@!@!@!  "
+Write-Host "!!:  !!!  !!:  !!:  !!!       !!:  !!:  !!!  "
+Write-Host ":!:  !:!  :!:  :!:  !:!  !!:  :!:  :!:  !:!  "
+Write-Host " ::   ::   ::   ::   ::  ::: : ::  ::   :::  "
+Write-Host "::    :   :    ::    :    : :::     :   : :  "
+Write-Host " "
+Write-Host " "
+                      
