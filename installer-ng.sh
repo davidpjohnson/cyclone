@@ -28,9 +28,13 @@ basic ()
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
     cp gitconfig ~/.gitconfig # Will need to add username and email
-    mkdir -p ~/.vim/autoload ~/.vim/bundle 
+    if [ ! -d ~/.vim autoload ]; then
+        mkdir -p ~/.vim/autoload
+    fi  
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+    if [ ! -f .git-prompt.sh ]; then
+        curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+    fi
 }
 
 # Basic-Unix: Debian based only. 
@@ -39,6 +43,7 @@ basic-unix ()
     # Install tools
     apt-get -y update
     apt-get install -y vim
+    apt-get install -y curl
     apt-get install -y guake
     apt-get install -y python3
     apt-get install -y python3-pip 
@@ -50,11 +55,26 @@ development ()
     # Set up git environment
     # Install pathogen.vim
     # Install vim plugins
-    cd ~/.vim/bundle
-    git clone https://github.com/tpope/vim-fugitive.git
-    git clone https://github.com/airblade/vim-gitgutter.git
-    git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
-    git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+    if [ ! -d ~/.vim/bundle ]; then
+        cd ~/.vim/bundle
+        git clone https://github.com/tpope/vim-fugitive.git
+        git clone https://github.com/airblade/vim-gitgutter.git
+        git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+        git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+    else
+        if [ ! -d vim-fugitive ]; then
+            git clone https://github.com/tpope/vim-fugitive.git
+        fi
+        if [ ! -d vim-gitgutter ]; then
+            git clone https://github.com/airblade/vim-gitgutter.git
+        fi
+        if [ ! -d syntastic ]; then
+            git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+        fi
+        if [ ! -d vim -airline ]; then
+            git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+        fi
+    fi 
 
 }
 
@@ -63,7 +83,7 @@ development-unix ()
 {
     # Install tools
     apt-get install -y git
-    apt-get install -y virtualbox
+    # apt-get install -y virtualbox
     apt-get install -y python3-dev
     apt-get install -y python-dev
     apt-get install -y python2-pip
@@ -159,7 +179,7 @@ installer ()
 }
 
 installer
-
+clear
 echo " "
 echo " "
 sleep  .80
@@ -187,7 +207,6 @@ echo " "
 sleep  .380
 echo " "
 sleep  .400
-
 echo " @@@@@@   @@@@@@@@   @@@@@@@  @@@  @@@  @@@@@@@   @@@  @@@@@@@  @@@ @@@  "
 sleep  .100
 echo "@@@@@@@   @@@@@@@@  @@@@@@@@  @@@  @@@  @@@@@@@@  @@@  @@@@@@@  @@@ @@@  "
@@ -212,3 +231,4 @@ echo " "
 sleep  .280
 echo " "
 sleep .280
+
