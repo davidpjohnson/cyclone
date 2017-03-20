@@ -1,11 +1,11 @@
 if (!(Test-Path $profile)){
     New-Item -path $profile -type file -force
-    cp Profiles\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\Documents\WindowsPowerShell\
+    cp Profiles\Microsoft.PowerShell_profile.ps1 $profile
     Write-Host "[+] Copied profile"
 }
 else{
     Write-Host "Directory Exists"
-    cp Profiles\Microsoft.PowerShell_profile.ps1 C:\Users\$env:UserName\Documents\WindowsPowerShell\
+    cp Profiles\Microsoft.PowerShell_profile.ps1 $profile
     Write-Host "[+] Copied profile" 
 }
 
