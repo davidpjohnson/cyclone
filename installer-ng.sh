@@ -28,7 +28,7 @@ basic ()
     cp vimrc ~/.vimrc
     cp bashrc ~/.bashrc
     cp gitconfig ~/.gitconfig # Will need to add username and email
-    if [ ! -d ~/.vim autoload ]; then
+    if [ ! -d ~/.vim/autoload ]; then
         mkdir -p ~/.vim/autoload
     fi  
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -62,16 +62,16 @@ development ()
         git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
         git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
     else
-        if [ ! -d vim-fugitive ]; then
+        if [ ! -d ~/.vim/bundle/vim-fugitive ]; then
             git clone https://github.com/tpope/vim-fugitive.git
         fi
-        if [ ! -d vim-gitgutter ]; then
+        if [ ! -d ~/.vim/bundle/vim-gitgutter ]; then
             git clone https://github.com/airblade/vim-gitgutter.git
         fi
-        if [ ! -d syntastic ]; then
+        if [ ! -d ~/.vim/bundle/syntastic ]; then
             git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
         fi
-        if [ ! -d vim -airline ]; then
+        if [ ! -d ~/.vim/bundle/vim-airline ]; then
             git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
         fi
     fi 
