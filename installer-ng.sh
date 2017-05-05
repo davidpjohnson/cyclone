@@ -149,28 +149,22 @@ fun-unix ()
 installer () 
 {
     if [ "$arg" == "" ]; then
-        echo "[+] Installing basic..."
         basic
         if [ $os == 'Linux' ]; then
-            echo "[+] Installing basic-unix..."
             basic-unix
         fi
     elif [ "$arg" == "-d" ]; then
-        echo "[+] Installing development..."
         basic
         development
         if [ $os == 'Linux' ]; then
-            echo "[+] Installing development-unix..."
             basic-unix
 	        development-unix
         fi
     elif [ "$arg" == "-h" ]; then
-        echo "[+] Installing hacking..."
         basic
 	    develpoment
 	    hacking
         if [ $os == 'Linux' ]; then
-            echo "[+] Installing hacking-unix..."
             basic-unix
             develpoment-unix
 	        hacking-unix
