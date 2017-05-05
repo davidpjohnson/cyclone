@@ -23,6 +23,7 @@ os=$(uname) # Get OS
 # Basic: Install basic tools and environments
 basic () 
 {
+    echo "[+] Installing basic..."
     # Set up environment
     cd Profiles
     cp vimrc ~/.vimrc
@@ -40,7 +41,8 @@ basic ()
 # Basic-Unix: Debian based only. 
 basic-unix () 
 {
-    # Install tools
+    echo "[+] Installing basic-unix..."
+        # Install tools
     apt-get -y update
     apt-get install -y vim
     apt-get install -y curl
@@ -52,7 +54,8 @@ basic-unix ()
 # Development: Install dev tools and environments
 development () 
 {
-    # Set up git environment
+    echo "[+] Installing development..."
+        # Set up git environment
     # Install pathogen.vim
     # Install vim plugins
     if [ ! -d ~/.vim/bundle ]; then
@@ -81,7 +84,8 @@ development ()
 # Development-Unix: Install Unix tools
 development-unix () 
 {
-    # Install tools
+    echo "[+] Installing development-unix..."
+        # Install tools
     apt-get install -y git
     # apt-get install -y virtualbox
     apt-get install -y python3-dev
