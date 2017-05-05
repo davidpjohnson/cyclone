@@ -162,18 +162,18 @@ installer ()
         if [ $os == 'Linux' ]; then
             echo "[+] Installing development-unix..."
             basic-unix
-	    development-unix
+	        development-unix
         fi
     elif [ "$arg" == "-h" ]; then
         echo "[+] Installing hacking..."
         basic
-	develpoment
-	hacking
+	    develpoment
+	    hacking
         if [ $os == 'Linux' ]; then
             echo "[+] Installing hacking-unix..."
             basic-unix
             develpoment-unix
-	    hacking-unix
+	        hacking-unix
         fi
     elif [ "$arg" == "-a" ]; then
         echo "[!] Damn dude installing all!"
