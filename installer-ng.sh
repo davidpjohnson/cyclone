@@ -49,6 +49,13 @@ basic-unix ()
     apt-get install -y guake
     apt-get install -y python3
     apt-get install -y python3-pip 
+    if [ ! -d ~/.vim/autoload ]; then
+        mkdir -p ~/.vim/autoload
+    fi
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    if [ ! -f .git-prompt.sh ]; then
+        curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+    fi
 }    
 
 # Development: Install dev tools and environments
