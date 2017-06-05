@@ -191,6 +191,7 @@ installer ()
 
 installer
 clear
+source ~/.bashrc
 echo " "
 echo " "
 sleep  .80
